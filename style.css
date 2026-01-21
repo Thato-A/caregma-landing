@@ -1,8 +1,20 @@
-/* -------- BASIC RESET -------- */
+/* ======================
+   Base Reset
+====================== */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
+}
+
+:root {
+  --green: #00b87c;
+  --green-dark: #009a68;
+  --text-dark: #0f172a;
+  --text-muted: #64748b;
+  --bg-soft: #f0fdf8;
+  --card-bg: #ffffff;
+  --border-soft: #e5e7eb;
 }
 
 body {
@@ -10,165 +22,231 @@ body {
     "Inter",
     system-ui,
     -apple-system,
+    BlinkMacSystemFont,
     sans-serif;
-  background: #f9fafb; /* slightly softer than pure white */
-  color: #111827;
+  background: linear-gradient(180deg, #ffffff 0%, var(--bg-soft) 100%);
+  color: var(--text-dark);
   line-height: 1.6;
 }
 
-/* -------- LAYOUT -------- */
+/* ======================
+   Layout
+====================== */
 .container {
-  max-width: 720px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 32px 20px 64px;
+  padding: 48px 24px 80px;
 }
 
 section {
-  margin-bottom: 56px;
-  background: #ffffff;
-  padding: 24px 20px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 72px;
 }
 
-section:first-of-type {
-  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
-}
-
-section:last-of-type {
-  background: #f8fafc;
-}
-
-/* -------- HEADER -------- */
+/* ======================
+   Header (brand only)
+====================== */
 .header {
-  margin-bottom: 64px;
+  margin-bottom: 72px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
 .logo {
-  height: 40px;
-  width: auto;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
 }
 
 .brand-name {
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  color: #111827;
-}
-
-/* -------- TYPOGRAPHY -------- */
-h1 {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 16px;
-  letter-spacing: -0.01em;
-  color: #111827;
-}
-
-h2 {
-  font-size: 1.75rem;
+  font-size: 20px;
   font-weight: 600;
-  margin-bottom: 14px;
+  color: var(--green);
 }
 
-p {
-  font-size: 1rem;
-  color: #4b5563;
-  margin-bottom: 16px;
+/* ======================
+   Hero
+====================== */
+
+.hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 64px;
+  align-items: center;
+  margin-top: 40px;
+  min-height: 520px;
 }
 
-.muted {
-  font-size: 0.9rem;
-  color: #6b7280;
+.hero-content {
+  max-width: 600px;
 }
 
-ul,
-ol {
-  margin-left: 20px;
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
 }
 
-li {
-  margin-bottom: 8px;
-  color: #374151;
+h1 {
+  font-size: 56px;
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 24px;
 }
 
-/* -------- BUTTON -------- */
+section:first-of-type p {
+  font-size: 18px;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+/* ======================
+   Buttons
+====================== */
 .btn-primary {
-  display: inline-block;
-  background: #2563eb;
+  background-color: var(--green);
   color: #ffffff;
-  padding: 14px 22px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  text-decoration: none;
   border: none;
+  padding: 16px 28px;
+  border-radius: 999px;
+  font-size: 16px;
+  font-weight: 600;
   cursor: pointer;
   transition: all 0.2s ease;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .btn-primary:hover {
-  background: #1e40af;
+  background-color: var(--green-dark);
   transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Helper text under CTA */
 .helper-text {
-  font-size: 0.85rem;
-  color: #6b7280;
-  margin-top: 8px;
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
 }
 
-/* -------- FORM -------- */
-form {
-  border-top: 1px solid #e5e7eb;
-  padding-top: 32px;
+/* ======================
+   Muted text
+====================== */
+.muted {
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
-/* -------- FORM STATUS MESSAGES -------- */
-.form-status {
+/* ======================
+   Card-style sections
+====================== */
+section:not(:first-of-type):not(.intake) {
+  background-color: var(--card-bg);
+  padding: 56px 48px;
+  border-radius: 28px;
+  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.06);
+  margin-top: 96px;
+}
+
+/* ======================
+   Headings
+====================== */
+h2 {
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+section > p:first-of-type {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 40px;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+/* ======================
+   Lists
+====================== */
+section ul,
+section ol {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+  list-style: none;
+  padding: 0;
+  margin-top: 32px;
+}
+
+section li {
+  background: #ffffff;
+  padding: 28px 24px;
+  border-radius: 20px;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.05);
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* ======================
+   CTA Section (repeat button)
+====================== */
+section:last-of-type {
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  text-align: center;
+  margin-top: 96px;
+}
+
+section:last-of-type .btn-primary {
   margin-top: 16px;
-  font-size: 0.95rem;
 }
 
-.form-status.loading {
-  color: #6b7280;
+/* ======================
+   Intake Form
+====================== */
+.intake {
+  margin-top: 120px;
+  background-color: #ffffff;
+  padding: 64px 48px;
+  border-radius: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
 }
 
-.form-status.error {
-  color: #b91c1c;
+.hidden {
+  display: none;
 }
 
-.form-status.success {
-  color: #047857;
+form {
+  margin-top: 32px;
+  display: grid;
+  gap: 18px;
 }
 
 label {
-  display: block;
-  font-size: 0.9rem;
+  font-size: 14px;
   font-weight: 500;
-  margin-bottom: 6px;
-  color: #374151;
 }
 
 input,
 select,
 textarea {
-  width: 100%;
-  padding: 12px 14px;
-  font-size: 1rem;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  margin-bottom: 20px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid var(--border-soft);
+  font-size: 15px;
   font-family: inherit;
-  transition: all 0.2s ease;
 }
 
 textarea {
@@ -180,72 +258,89 @@ input:focus,
 select:focus,
 textarea:focus {
   outline: none;
-  border-color: #2563eb;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  border-color: var(--green);
 }
 
-/* -------- INTAKE FORM VISIBILITY -------- */
-.intake.hidden {
-  display: none;
+/* ======================
+   Form status
+====================== */
+.form-status {
+  margin-top: 16px;
+  font-size: 14px;
 }
 
-.intake {
-  animation: fadeIn 0.4s ease-in-out;
+.form-status.loading {
+  color: var(--text-muted);
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.form-status.error {
+  color: #dc2626;
 }
 
-#thank-you {
-  text-align: center;
-  padding: 32px 16px;
-}
-
+/* ======================
+   Thank you state
+====================== */
 #thank-you h2 {
   margin-bottom: 12px;
 }
 
-/* -------- FOOTER -------- */
+/* ======================
+   Footer
+====================== */
 footer {
-  font-size: 0.85rem;
-  color: #6b7280;
-  border-top: 1px solid #e5e7eb;
-  padding-top: 24px;
+  margin-top: 80px;
+  font-size: 13px;
+  color: var(--text-muted);
   text-align: center;
 }
 
-/* -------- RESPONSIVE -------- */
+/* ======================
+   Responsive
+====================== */
 @media (max-width: 768px) {
-  .container {
-    padding: 24px 15px 48px;
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hero-image {
+    order: -1;
+  }
+
+  .hero-image img {
+    max-height: 320px;
   }
 
   h1 {
-    font-size: 2rem;
+    font-size: 40px;
   }
 
   h2 {
-    font-size: 1.5rem;
+    font-size: 26px;
   }
 
-  .btn-primary {
-    width: 100%;
-    padding: 14px 0;
+  section:not(:first-of-type) {
+    padding: 28px;
   }
 
-  section {
-    padding: 20px 15px;
+  section ul,
+  section ol {
+    grid-template-columns: 1fr;
   }
 
-  .brand-name {
-    font-size: 1.25rem;
+  section:not(:first-of-type):not(.intake) {
+    padding: 48px 24px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+
+  section > p:first-of-type {
+    font-size: 16px;
+  }
+
+  .intake {
+    padding: 48px 24px;
   }
 }
