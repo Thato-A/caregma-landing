@@ -1,0 +1,251 @@
+/* -------- BASIC RESET -------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background: #f9fafb; /* slightly softer than pure white */
+  color: #111827;
+  line-height: 1.6;
+}
+
+/* -------- LAYOUT -------- */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 32px 20px 64px;
+}
+
+section {
+  margin-bottom: 56px;
+  background: #ffffff;
+  padding: 24px 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+section:first-of-type {
+  background: linear-gradient(180deg, #ffffff 0%, #f3f4f6 100%);
+}
+
+section:last-of-type {
+  background: #f8fafc;
+}
+
+/* -------- HEADER -------- */
+.header {
+  margin-bottom: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+}
+
+.brand-name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: #111827;
+}
+
+/* -------- TYPOGRAPHY -------- */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  letter-spacing: -0.01em;
+  color: #111827;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 14px;
+}
+
+p {
+  font-size: 1rem;
+  color: #4b5563;
+  margin-bottom: 16px;
+}
+
+.muted {
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+ul,
+ol {
+  margin-left: 20px;
+}
+
+li {
+  margin-bottom: 8px;
+  color: #374151;
+}
+
+/* -------- BUTTON -------- */
+.btn-primary {
+  display: inline-block;
+  background: #2563eb;
+  color: #ffffff;
+  padding: 14px 22px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.btn-primary:hover {
+  background: #1e40af;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.helper-text {
+  font-size: 0.85rem;
+  color: #6b7280;
+  margin-top: 8px;
+}
+
+/* -------- FORM -------- */
+form {
+  border-top: 1px solid #e5e7eb;
+  padding-top: 32px;
+}
+
+/* -------- FORM STATUS MESSAGES -------- */
+.form-status {
+  margin-top: 16px;
+  font-size: 0.95rem;
+}
+
+.form-status.loading {
+  color: #6b7280;
+}
+
+.form-status.error {
+  color: #b91c1c;
+}
+
+.form-status.success {
+  color: #047857;
+}
+
+label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  transition: all 0.2s ease;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+}
+
+/* -------- INTAKE FORM VISIBILITY -------- */
+.intake.hidden {
+  display: none;
+}
+
+.intake {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#thank-you {
+  text-align: center;
+  padding: 32px 16px;
+}
+
+#thank-you h2 {
+  margin-bottom: 12px;
+}
+
+/* -------- FOOTER -------- */
+footer {
+  font-size: 0.85rem;
+  color: #6b7280;
+  border-top: 1px solid #e5e7eb;
+  padding-top: 24px;
+  text-align: center;
+}
+
+/* -------- RESPONSIVE -------- */
+@media (max-width: 768px) {
+  .container {
+    padding: 24px 15px 48px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .btn-primary {
+    width: 100%;
+    padding: 14px 0;
+  }
+
+  section {
+    padding: 20px 15px;
+  }
+
+  .brand-name {
+    font-size: 1.25rem;
+  }
+}
