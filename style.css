@@ -181,11 +181,42 @@ section > p:first-of-type {
 section ul,
 section ol {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
   list-style: none;
   padding: 0;
   margin-top: 32px;
+}
+
+section ol {
+  counter-reset: step;
+}
+
+section ol li {
+  position: relative;
+  padding-top: 56px;
+}
+
+section ol li::before {
+  counter-increment: step;
+  content: counter(step);
+  position: absolute;
+  top: 20px;
+  left: 24px;
+
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+
+  background-color: var(--green);
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 14px;
+  font-weight: 600;
 }
 
 section li {
@@ -297,6 +328,13 @@ footer {
 /* ======================
    Responsive
 ====================== */
+
+@media (max-width: 1000px) {
+  section ol {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
