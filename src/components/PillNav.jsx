@@ -160,7 +160,7 @@ export default function PillNav({
             }}
             className="block w-full text-left px-4 py-3 rounded-xl hover:bg-slate-100"
           >
-            Book Appointment
+            Book an Advocate
           </button>
 
           <button
