@@ -16,7 +16,7 @@ export default function Footer({ onWaitlist, onRequest }) {
         </div>
 
         {/* CENTER */}
-        <div className="flex flex-col items-start text-sm gap-2 text-left mx-auto">
+        <div className="flex flex-col items-start text-sm gap-2 text-left md:mx-auto">
           <button
             onClick={onRequest}
             className="text-slate-600 hover:text-slate-900"
