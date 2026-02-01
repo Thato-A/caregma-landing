@@ -1,4 +1,4 @@
-import { Linkedin, Facebook, Instagram, Twitter } from "lucide-react";
+import { Linkedin, Facebook, Instagram } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 export default function Footer({ onWaitlist, onRequest }) {
@@ -74,10 +74,10 @@ export default function Footer({ onWaitlist, onRequest }) {
             </a>
 
             <a
-              href="https://x.com"
+              href="https://www.tiktok.com"
               target="_blank"
               rel="noreferrer"
-              aria-label="X"
+              aria-label="TikTok"
               className="text-slate-500 hover:text-slate-900"
             >
               <svg
@@ -87,7 +87,7 @@ export default function Footer({ onWaitlist, onRequest }) {
                 height="20"
                 fill="currentColor"
               >
-                <path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.64 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932 6.064-6.933zm-1.29 19.49h2.04L6.486 3.24H4.298L17.61 20.643z" />
+                <path d="M21.5 7.5c-1.8 0-3.3-.6-4.6-1.7v8.4c0 4.1-3.4 7.5-7.5 7.5S2 18.3 2 14.2 5.4 6.7 9.5 6.7c.4 0 .9 0 1.3.1v3.9c-.4-.1-.8-.2-1.3-.2-1.9 0-3.5 1.6-3.5 3.6s1.6 3.6 3.5 3.6 3.5-1.6 3.5-3.6V2h4.1c.3 2.4 2.2 4.2 4.6 4.5v1z" />
               </svg>
             </a>
           </div>
